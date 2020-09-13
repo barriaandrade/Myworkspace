@@ -9,6 +9,7 @@ import {
 import Inicio from './components/Inicio';
 import Nosotros from './components/Nosotros';
 import Contacto from './components/Contacto';
+import User from './components/User';
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
           <hr />
           <Switch>
             {/*  ir desde lo mas especifico a lo más general. De lo contrario usar exact*/}
+            <Route path="/nosotros/:id">
+               <User />             
+            </Route>
             <Route path="/contacto">
               <Contacto />
             </Route>
