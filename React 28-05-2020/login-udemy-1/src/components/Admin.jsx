@@ -22,6 +22,11 @@ const Admin = (props) => {
     return (
         <div>
             <h3>Welcome</h3>
+            {
+                user && (<h3>{user.email}</h3>)
+                    
+
+            }
         </div>
     )
 }
