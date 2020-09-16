@@ -1,6 +1,8 @@
 import React from 'react'
 import {auth} from '../firebase'
 import { withRouter} from 'react-router-dom';
+import Firestore from './Firestore';
+
 
 const Admin = (props) => {
     
@@ -21,9 +23,9 @@ const Admin = (props) => {
     
     return (
         <div>
-            <h3>Welcome</h3>
+            <h3 className="text-center">Mis tareas</h3>
             {
-                user && (<h3>{user.email}</h3>)
+                user && (<Firestore user={user} />)
                     
 
             }
