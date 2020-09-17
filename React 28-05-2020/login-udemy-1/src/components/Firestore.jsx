@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { db } from '../firebase';
+import moment  from 'moment';
+import 'moment/locale/es'
 
 function Firestore(props) {
 
@@ -109,13 +111,13 @@ function Firestore(props) {
     return (
         <div className="container mt-3">
             <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <h3>Lista de tareas</h3>
                     <ul className="list-group">
                         {
                             tareas.map(item => (
                                 <li className="list-group-item" key={item.id}>
-                                    {item.name}
+                                    {item.name} - { moment(item.fecha).format('lll')}
                                     <button
                                         className="btn btn-danger btn-sm float-right"
                                         onClick={() => eliminar(item.id)}
@@ -133,7 +135,7 @@ function Firestore(props) {
                         }
                     </ul>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <h3>{
                         modoEdicion ? 'Editar tarea' : 'Agregar tarea'
                     }</h3>
