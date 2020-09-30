@@ -11,6 +11,7 @@ const dataInicial = {
 const GET_POKEMONES_EXITO = "GET_POKEMONES_EXITO";
 const SIGUIENTE_POKEMONES_EXITO = "SIGUIENTE_POKEMONES_EXITO";
 const ANTERIOR_POKEMONES_EXITO = "ANTERIOR_POKEMONES_EXITO";
+const POKE_INFO_EXITO = "POKE_INFO_EXITO";
 // reducer
 export default function pokeReducer(state = dataInicial, action) {
   switch (action.type) {
@@ -29,11 +30,54 @@ export default function pokeReducer(state = dataInicial, action) {
         ...state,
         ...action.payload,
       };
+    case POKE_INFO_EXITO:
+      return {
+        ...state,
+        unPokemon: action.payload,
+      };
     default:
       return state;
   }
 }
 // actions
+export const unPokeDetalleAccion = (
+  url = "https://pokeapi.co/api/v2/pokemon/1/"
+) => async (dispatch) => {
+  if (localStorage.getItem(url)) {
+    dispatch({
+      type: POKE_INFO_EXITO,
+      payload: JSON.parse(localStorage.getItem(url)),
+    });
+    return;
+  }
+
+  try {
+    const res = await axios.get(url);
+
+    dispatch({
+      type: POKE_INFO_EXITO,
+      payload: {
+        nombre: res.data.name,
+        ancho: res.data.weight,
+        alto: res.data.height,
+        foto: res.data.sprites.front_default,
+      },
+    });
+
+    localStorage.setItem(
+      url,
+      JSON.stringify({
+        nombre: res.data.name,
+        ancho: res.data.weight,
+        alto: res.data.height,
+        foto: res.data.sprites.front_default,
+      })
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const obtenerPokemonesAccion = () => async (dispatch, getState) => {
   //Preguntamos por el localStorage. Si viene algo no consultamos directo a nuestra base
   if (localStorage.getItem("offset=0")) {
@@ -46,7 +90,7 @@ export const obtenerPokemonesAccion = () => async (dispatch, getState) => {
 
   try {
     const res = await axios.get(
-      `https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`
+      `https://pokeapi.co/api/v2/pokemon?offset=0&limit=10`
     );
 
     dispatch({
