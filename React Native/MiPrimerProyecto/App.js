@@ -1,10 +1,10 @@
 import React from 'react';
-import Card from './source/App/Components/BookItem/Card';
+import Home from './source/App/Screens/Home';
 
-const App: () => React$Node = () => {
+const App = () => {
   return (
     <>
-      <Card></Card>
+      <Home></Home>
     </>
   );
 };
