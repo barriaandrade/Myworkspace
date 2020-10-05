@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './source/App/Screens/Home';
+import HomeList from './HomeList/HomeList';
 
 const App = () => {
   return (
     <>
-      <Home></Home>
+      <HomeList></HomeList>
     </>
   );
 };
