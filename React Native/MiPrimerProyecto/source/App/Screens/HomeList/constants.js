@@ -12,7 +12,7 @@ export const bookData = [
     },
     {
         id: 2,
-        title: 'Beethoven Sonatas for the Piano VOL.1',
+        title: 'Beethoven Sonatas',
         author: 'Ludwing Van Beethoven',
         description: 'Ludwig van Beethoven escribió sus 32 sonatas para piano entre 1795 y 1822. Aunque originalmente no pretendía ser un todo significativo, como conjunto comprenden una de las colecciones de obras más importantes de la historia de la música.',
         image: beethovenSonata

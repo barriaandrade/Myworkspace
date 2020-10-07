@@ -8,8 +8,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   separator: {
-    height: 1,
+    height: 2,
     backgroundColor: 'black',
+    marginTop: 10,
     marginBottom: 10,
   },
 });

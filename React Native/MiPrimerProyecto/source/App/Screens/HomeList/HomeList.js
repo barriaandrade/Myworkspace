@@ -25,7 +25,8 @@ function HomeList() {
       contentContainerStyle={styles.container}
       data={bookData}
       renderItem={renderItem}
-      keyExtractor={keyExtractor}></FlatList>
+      keyExtractor={keyExtractor}
+      ItemSeparatorComponent={itemSeparator}></FlatList>
   );
 }
 

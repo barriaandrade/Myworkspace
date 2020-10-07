@@ -3,7 +3,7 @@ import {SafeAreaView, View, Text, Image, TouchableOpacity} from 'react-native';
 
 import styles from './styles';
 
-const BookItem = ({image, title, subtitle, description}) => {
+const BookItem = ({image, title, author, description}) => {
   const [touched, setTouched] = useState(false);
   const handlePress = () => {
     setTouched(!touched);
@@ -18,7 +18,7 @@ const BookItem = ({image, title, subtitle, description}) => {
             <Text style={[styles.title, touched && styles.onPressTitle ]}>
               {title}
             </Text>
-            <Text style={styles.subtitle}>{subtitle}</Text>
+            <Text style={styles.subtitle}>{author}</Text>
             <Text
               numberOfLines={3}
               ellipsizeMode="tail"

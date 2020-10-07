@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#bfbfbf',
         padding: 10,
+        marginLeft: 15,
         justifyContent: 'center',
         alignContent: 'center',
         borderRadius:10,
@@ -58,9 +59,9 @@ const styles = StyleSheet.create({
     },
     image: {
         height: 100,
-        width: 100,
+        width: 70,
         alignContent:'flex-end',
-        padding: 10,
+        padding: 16,
         borderRadius:5,
     },
 });
