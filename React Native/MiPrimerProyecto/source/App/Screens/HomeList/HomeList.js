@@ -4,6 +4,7 @@ import {bookData} from './constants';
 import BookItem from '../../Components/BookItem/BookItem';
 import styles from './styles';
 
+
 function HomeList() {
   const keyExtractor = ({id}) => `${id}`;
   const itemSeparator = () => <View style={styles.separator}></View>;
@@ -20,13 +21,16 @@ function HomeList() {
   };
 
   return (
-    <FlatList
-      bounces={false}
-      contentContainerStyle={styles.container}
-      data={bookData}
-      renderItem={renderItem}
-      keyExtractor={keyExtractor}
-      ItemSeparatorComponent={itemSeparator}></FlatList>
+    <SafeAreaView style={{flex:1}}>
+      <FlatList
+        bounces={false}
+        contentContainerStyle={styles.container}
+        data={bookData}
+        renderItem={renderItem}
+        keyExtractor={keyExtractor}
+        ItemSeparatorComponent={itemSeparator}>
+        </FlatList>
+    </SafeAreaView>
   );
 }
 
