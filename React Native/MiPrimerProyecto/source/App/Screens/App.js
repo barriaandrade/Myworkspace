@@ -1,18 +1,16 @@
 import HomeList from './HomeList/HomeList';
 import 'react-native-gesture-handler';
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
 
-const Stack = createStackNavigator();
+const AppStack = createStackNavigator();
 
 const App = () => {
   return (
-    
     <NavigationContainer>
       <HomeList></HomeList>
     </NavigationContainer>
-      
   );
 };
 
