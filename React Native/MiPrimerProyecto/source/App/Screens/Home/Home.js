@@ -1,21 +1,18 @@
 import React from 'react';
-import {SafeAreaView, TouchableOpacity} from 'react-native';
-import BookItem from '../Components/BookItem/BookItem';
+import {SafeAreaView, TouchableOpacity, Text} from 'react-native';
 import styles from './styles';
-import cover from '../Assets/WellTempered.jpg';
 
-const Home = () => {
-  const author = 'Well Tempered Clavier';
-  const title = 'Johann Sebastian Bach';
-  const description =
-    'Ciclos de preludios y fugas compuestos en todas las tonalidades mayores y menores de la gama cromática.';
+
+const Home = ({navigation}) => {
+
+const handleNavigateToDetail = () => navigation.navigate('HomeList');
+
   return (
     <SafeAreaView style={styles.container}>
-      <BookItem
-        image={cover}
-        title={title}
-        subtitle={author}
-        description={description}></BookItem>
+      <Text style={styles.text}>Bienvenido</Text>
+      <TouchableOpacity style={styles.button} onPress={handleNavigateToDetail}>
+        <Text style={styles.buttonTitle}>Lista de libros</Text>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

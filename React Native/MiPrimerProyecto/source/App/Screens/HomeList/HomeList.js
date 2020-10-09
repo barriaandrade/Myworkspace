@@ -1,16 +1,22 @@
 import React from 'react';
-import {SafeAreaView, FlatList, View, TouchableOpacity, Text} from 'react-native';
+import {
+  SafeAreaView,
+  FlatList,
+  View,
+  TouchableOpacity,
+  Text,
+} from 'react-native';
 import {bookData} from './constants';
 import BookItem from '../../Components/BookItem/BookItem';
 import styles from './styles';
 
-
-function HomeList() {
+function HomeList({navigation}) {
   const keyExtractor = ({id}) => `${id}`;
   const itemSeparator = () => <View style={styles.separator}></View>;
+  const handleNavigateToDetail = () => navigation.navigate('ItemDetail');
+
   const renderItem = ({item}) => {
     const {title, author, description, image} = item;
-
     return (
       <BookItem
         title={title}
@@ -22,8 +28,8 @@ function HomeList() {
 
   return (
     <SafeAreaView style={styles.safeContainer}>
-      <TouchableOpacity style={styles.button}>
-        <Text>Navegar a pantalla de detalle</Text>
+      <TouchableOpacity style={styles.button} onPress={handleNavigateToDetail}>
+        <Text style={styles.buttonTitle}>Navegar a pantalla de detalle</Text>
       </TouchableOpacity>
       <FlatList
         bounces={false}
@@ -31,8 +37,7 @@ function HomeList() {
         data={bookData}
         renderItem={renderItem}
         keyExtractor={keyExtractor}
-        ItemSeparatorComponent={itemSeparator}>
-        </FlatList>
+        ItemSeparatorComponent={itemSeparator}></FlatList>
     </SafeAreaView>
   );
 }

@@ -20,7 +20,7 @@ const BookItem = ({image, title, author, description}) => {
             </Text>
             <Text style={styles.subtitle}>{author}</Text>
             <Text
-              numberOfLines={3}
+              numberOfLines={4}
               ellipsizeMode="tail"
               style={styles.textContent}>
               {description}

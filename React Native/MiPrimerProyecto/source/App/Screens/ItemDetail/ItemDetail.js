@@ -7,7 +7,7 @@ const ItemDetail = () => {
     return (
     
         <SafeAreaView style={styles.container}>
-            <Text>Workshop React Native</Text>
+            <Text style={styles.text}>Detalle</Text>
         </SafeAreaView>
     )
 }

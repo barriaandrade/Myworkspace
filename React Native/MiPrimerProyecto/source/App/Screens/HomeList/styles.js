@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: '#bfbfbf',
-    width: '80%',
+    width: '87%',
     height: '5%',
-    marginTop: 10,
+    marginTop: 20,
     borderRadius:10,
     borderWidth: 0,
     alignItems: 'center',
@@ -26,6 +26,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  buttonTitle: {
+    textAlign: 'center',
+    fontWeight: 'bold'
   }
 });
 
