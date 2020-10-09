@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, FlatList, View} from 'react-native';
+import {SafeAreaView, FlatList, View, TouchableOpacity, Text} from 'react-native';
 import {bookData} from './constants';
 import BookItem from '../../Components/BookItem/BookItem';
 import styles from './styles';
@@ -21,7 +21,10 @@ function HomeList() {
   };
 
   return (
-    <SafeAreaView style={{flex:1}}>
+    <SafeAreaView style={styles.safeContainer}>
+      <TouchableOpacity style={styles.button}>
+        <Text>Navegar a pantalla de detalle</Text>
+      </TouchableOpacity>
       <FlatList
         bounces={false}
         contentContainerStyle={styles.container}

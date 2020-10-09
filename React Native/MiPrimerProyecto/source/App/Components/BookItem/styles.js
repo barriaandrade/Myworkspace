@@ -5,21 +5,18 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         backgroundColor: '#bfbfbf',
         padding: 10,
-        marginLeft: 15,
         justifyContent: 'center',
-        alignContent: 'center',
         borderRadius:10,
         borderWidth: 0,
-        width: '90%'
+        width: '100%'
     }, onPressViewContainer: {
         flexDirection: 'row',
         backgroundColor: '#d96465',
         padding: 10,
         justifyContent: 'center',
-        alignContent: 'center',
         borderRadius:10,
         borderWidth: 0,
-        width: '90%'
+        width: '100%'
     },
     content: {
         marginLeft: 10
@@ -58,10 +55,10 @@ const styles = StyleSheet.create({
         fontSize: 13,
     },
     image: {
-        height: 100,
-        width: 70,
+        height: 110,
+        width: 100,
         alignContent:'flex-end',
-        padding: 16,
+        padding: 1,
         borderRadius:5,
     },
 });
